@@ -1,4 +1,4 @@
-const houses = require('/.db.json')
+const houses = require('./db.json')
 let globalId = 3
 
 
@@ -12,7 +12,7 @@ module.exports = {
     createHouse: (req, res) => {
         let {address, price, imageURL} = req.body
         let newHouses = {
-            ID: globalId,
+            id: globalId,
             address,
             price,
             imageURL
@@ -31,7 +31,7 @@ module.exports = {
             res.status(400).send('cannot go below zero')
         } else if (type === 'plus'){
             houses[index].price += 10000;
-            res.status(200).send(houses)
+            // res.status(200).send(houses)
         }else if (type === 'minus'){
             houses[index].price -= 10000;
         }else {

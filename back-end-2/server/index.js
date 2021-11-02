@@ -16,9 +16,9 @@ const {
 
 
 app.get("/api/houses", getHouses)
-app.put("/api/houses", createHouse)
+app.put("/api/houses/:id", createHouse)
 app.post("/api/houses", updateHouse)
-app.delete("/api/houses", deleteHouse)
+app.delete("/api/houses/:id", deleteHouse)
 
 const SERVER_PORT = 4004
 app.listen(SERVER_PORT, ()=> console.log(`Server is running on ${SERVER_PORT}`))
